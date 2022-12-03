@@ -24,7 +24,7 @@ export default function cssStyles(theme) {
       return {
         backdropFilter: `blur(${blur}px)`,
         WebkitBackdropFilter: `blur(${blur}px)`, // Fix on Mobile
-        backgroundColor: alpha('#071726'),
+        backgroundColor: alpha(color, opacity),
       };
     },
     bgGradient: (props) => {
@@ -40,7 +40,7 @@ export default function cssStyles(theme) {
       const url = props?.url || 'https://minimal-assets-api.vercel.app/assets/images/bg_gradient.jpg';
       const direction = getDirection(props?.direction);
       const startColor = props?.startColor || alpha(theme?.palette.grey[900] || '#000000', 0.88);
-      const endColor = props?.endColor || alpha(theme?.palette.grey[900] || '#000000', 0.88);
+      const endColor = props?.endColor || alpha(theme?.palette.grey[200] || '#000000', 0.88);
 
       return {
         background: `linear-gradient(${direction}, ${startColor}, ${endColor}), url(${url})`,
