@@ -116,22 +116,7 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           onMouseEnter={onHoverEnter}
           onMouseLeave={onHoverLeave}
           PaperProps={{
-            sx: {
-              width: NAVBAR.DASHBOARD_WIDTH,
-              borderRightStyle: 'dashed',
-              bgcolor: 'background.default',
-              transition: (theme) =>
-                theme.transitions.create('width', {
-                  duration: theme.transitions.duration.standard,
-                }),
-              ...(isCollapse && {
-                width: NAVBAR.DASHBOARD_COLLAPSE_WIDTH,
-              }),
-              ...(collapseHover && {
-                ...cssStyles(theme).bgBlur(),
-                boxShadow: (theme) => theme.customShadows.z24,
-              }),
-            },
+           
           }}
         >
           {renderContent}
