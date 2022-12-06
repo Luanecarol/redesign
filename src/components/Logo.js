@@ -11,11 +11,8 @@ Logo.propTypes = {
   sx: PropTypes.object,
 };
 
+
 export default function Logo({ disabledLink = false, sx }) {
-  const theme = useTheme();
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-  const PRIMARY_MAIN = theme.palette.primary.main;
-  const PRIMARY_DARK = theme.palette.primary.dark;
 
   const logo = (
     <Box sx={{ width: 40, height: 40, ...sx }}>
@@ -38,4 +35,5 @@ export default function Logo({ disabledLink = false, sx }) {
   }
 
   return <RouterLink to="/">{logo}</RouterLink>;
+
 }
