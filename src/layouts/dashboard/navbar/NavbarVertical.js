@@ -19,6 +19,8 @@ import { NavSectionVertical } from '../../../components/nav-section';
 import navConfig from './NavConfig';
 import NavbarDocs from './NavbarDocs';
 import CollapseButton from './CollapseButton';
+import LanguagePopover from '../header/LanguagePopover';
+
 
 // ----------------------------------------------------------------------
 
@@ -81,12 +83,14 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
         </Stack>
 
       </Stack>
+     
       {!isCollapse && <NavbarDocs />}
 
       <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
       <Box sx={{ flexGrow: 1 }} />
+     
+      {!isCollapse && <LanguagePopover/>}
 
-      {!isCollapse && <NavbarDocs />}
     </Scrollbar>
   );
 
