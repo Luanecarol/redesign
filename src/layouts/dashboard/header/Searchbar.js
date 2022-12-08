@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
-import { TextField, Input, Slide, Button, InputAdornment, ClickAwayListener } from '@mui/material';
+import {Input, Slide, Button, InputAdornment, ClickAwayListener, OutlinedInput } from '@mui/material';
 // utils
 import cssStyles from '../../../utils/cssStyles';
 // components
@@ -16,7 +16,7 @@ const APPBAR_DESKTOP = 92;
 const SearchbarStyle = styled('div')(({ theme }) => ({
   ...cssStyles(theme).bgBlur(),
   top: 0,
-  left: 0,
+  left: '10%',
   width: '50%',
   display: 'flex',
   position: 'absolute',
@@ -46,27 +46,25 @@ export default function Searchbar() {
     
       <div>
        
-          <IconButtonAnimate onClick={handleOpen}>
-            <Iconify icon={'eva:search-fill'} width={20} height={20} />
-          </IconButtonAnimate>
+         
        
 
        
           <SearchbarStyle>
-          <TextField
+          <OutlinedInput
            autoFocus
            fullWidth
            disableUnderline
-           placeholder="Search…"
-           startAdornment={
-             <InputAdornment position="start">
-               <Iconify
-                 icon={'eva:search-fill'}
-                 sx={{ color: 'text.disabled', width: 20, height: 20 }}
-               />
-             </InputAdornment>
-           }
-           sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
+              placeholder="Pesquise Jogos Empresas Etc..."
+              startAdornment={
+               
+                  <Iconify
+                    icon={'eva:search-fill'}
+                    sx={{ color: 'white', width: 20, height: 20 }}
+                  />
+              
+              }
+              sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
            id="outlined-basic" label="Outlined" variant="outlined" />
 
           </SearchbarStyle>
